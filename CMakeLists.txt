@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(MinimalTemplate)
+project(CPPMinT)
 
 add_subdirectory(src)
 add_subdirectory(thirdparty)

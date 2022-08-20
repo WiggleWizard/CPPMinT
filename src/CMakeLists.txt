@@ -1,9 +1,10 @@
-add_executable(${PROJECT_NAME} Main.cpp EASTLMem.cpp)
+add_executable(${PROJECT_NAME}
+    Main.cpp
+    EASTLMem.cpp)
 
 target_link_directories(${PROJECT_NAME}
-        PRIVATE
-        .
-        )
+    PRIVATE
+        .)
 
 target_link_libraries(${PROJECT_NAME}
     EASTL
