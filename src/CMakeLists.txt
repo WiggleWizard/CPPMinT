@@ -11,3 +11,4 @@ target_link_libraries(${PROJECT_NAME}
     spdlog)
 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
+add_custom_target(NatVis SOURCES ${CMAKE_SOURCE_DIR}/thirdparty/EASTL/repo/doc/EASTL.natvis)
