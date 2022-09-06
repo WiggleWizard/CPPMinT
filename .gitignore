@@ -31,6 +31,8 @@
 *.out
 *.app
 
+/out
+/.vs
 /build
 /build-*
 /.idea

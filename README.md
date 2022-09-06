@@ -37,3 +37,5 @@ your project beyond editing `thirdparty/CMakeLists.txt` so all the following lib
 - [EASTL](https://github.com/electronicarts/EASTL) - Fantastic standard library from EA. Contains everything from the STD library set and then some.
 - [spdlog](https://github.com/gabime/spdlog) - Super easy to use, minimal logging tool: `spdlog::info("{} iterations", i);`
 - [fmt](https://github.com/fmtlib/fmt) - String formatter. Used in spdlog.
+- [SkeletonMinRes](https://github.com/WiggleWizard/SkeletonMinRes) - Minimal automatic resource (glsl, scripts, textures, etc) embedding tool.
+- [argparse](https://github.com/p-ranav/argparse) - Argument parser for modern C++.
