@@ -12,7 +12,7 @@ I just wanted my own, in my own style, with my own customizations.
 
 ## How to use
 ```shell
-git clone --recursive https://github.com/wigglewizard/CPPMinT <projectname>
+git clone https://github.com/wigglewizard/CPPMinT <projectname>
 cd <projectname>
 ```
 
