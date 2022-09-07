@@ -18,26 +18,39 @@ CPMAddPackage(
     URL "https://github.com/electronicarts/EABase/archive/521cb053d9320636f53226ffc616216cf532f0ef.zip"
     VERSION 521cb053d9320636f53226ffc616216cf532f0ef)
 
-# EASTL
+# EASTL - General STL for replacing standard C++ library
 CPMAddPackage(
     NAME EASTL
     URL "https://github.com/electronicarts/EASTL/archive/5eb9b1ec09faaf5965125a07f3907a3d9cd0e1e7.zip"
     VERSION 5eb9b1ec09faaf5965125a07f3907a3d9cd0e1e7)
 
-# spdlog
+# spdlog - Logging
 CPMAddPackage(
     NAME spdlog
     GITHUB_REPOSITORY gabime/spdlog
     VERSION 1.10.0)
 
-# SkeletonMinRes
+# SkeletonMinRes - Resource embedding
 CPMAddPackage(
     NAME SkeletonMinRes
     GITHUB_REPOSITORY WiggleWizard/SkeletonMinRes
     VERSION 1.0.0)
 
-# argparse
+# argparse - Parsing CLI arguments
 CPMAddPackage(
     NAME argparse
     GITHUB_REPOSITORY p-ranav/argparse
     VERSION 2.6)
+
+# GLFW - Windowing/Input
+set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "")
+set(GLFW_BUILD_TESTS OFF CACHE BOOL "")
+set(GLFW_BUILD_DOCS OFF CACHE BOOL "Build glfw docs")
+set(GLFW_INSTALL OFF CACHE BOOL "Build glfw docs")
+CPMAddPackage(
+    NAME glfw
+    GITHUB_REPOSITORY glfw/glfw
+    GIT_TAG 3.3.8)
+
+# ImGui
+include("imgui.cmake")

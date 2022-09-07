@@ -1,23 +1,19 @@
-#include "SimpleBench.h"
+#include "Application.h"
 
-#include <spdlog/spdlog.h>
-#include <EASTL/string.h>
+#define CREATE_APPLICATION_DEFINE(ApplicationClass) \
+	ApplicationBase* CreateApplication() { return new ApplicationClass(); }
 
-#include <SkeletonMinRes/Loader.h>
+/**	Initializes application base.
 
-#include "Logging.h"
-LOG_DECL(logger, Main);
+	Basic "bootstraping" line to get booted as soon as the application can do so.
+ */
+#define START_APPLICATION(ApplicationClass) \
+CREATE_APPLICATION_DEFINE(ApplicationClass) \
+int main(int argc, const char* argv[]) \
+{ \
+	ApplicationBase::CreateInstance = &CreateApplication; \
+	return ApplicationBase::GlobalMain(argc, argv); \
+} \
 
 
-int main(int argc, char *argv[])
-{
-    SimpleBench bench(true);
-
-    SkeletonMinRes::Resource dataRes = LOAD_RESOURCE(Data_json);
-
-    const eastl::string str(dataRes.Data());
-    logger->info("Data.json resource contents: \n{}", str);
-
-    bench.Stop();
-    logger->info("Took {}us to execute", bench.GetDurationInUs());
-}
+START_APPLICATION(Application)
