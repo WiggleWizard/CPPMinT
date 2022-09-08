@@ -1,5 +1,6 @@
 embed_resources(PROJECT_RESOURCES
-    Data.json)
+    Data/sample_data.json
+    Data/motivations.txt)
 
 set(PROJECT_SOURCE_FILES
     "Main.cpp"

@@ -17,6 +17,7 @@ public:
 	using CreateInstanceFunction = ApplicationBase* (*)();
 	static CreateInstanceFunction CreateInstance;
 
+	// Gets the instance
 	static ApplicationBase* Instance() { return _instance; }
 	template<class T>
 	static T* Instance() { return dynamic_cast<T*>(_instance); }
@@ -27,6 +28,7 @@ public:
 		return title;
 	}
 
+	// Override these
 	virtual int Main(int argc, const char* argv[]) { return 0; }
 	virtual void Initialize() {}
 	virtual void Tick(double deltaTime) {}

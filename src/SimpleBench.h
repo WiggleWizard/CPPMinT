@@ -8,7 +8,8 @@ class SimpleBench
 public:
     SimpleBench(bool startNow = false)
     {
-        Start();
+        if(startNow)
+			Start();
     }
 
     ~SimpleBench()
@@ -19,6 +20,8 @@ public:
     void Start()
     {
         _startTimePoint = std::chrono::high_resolution_clock::now();
+        _duration = 0;
+        _bIsRunning = true;
     }
 
     /**
@@ -33,13 +36,18 @@ public:
 
         _duration = end - start;
 
+        _bIsRunning = false;
+
         return GetDurationInMs();
     }
 
     double GetDurationInMs() { return (double)_duration * (double)0.001f; }
     long long GetDurationInUs() { return _duration; }
 
+    bool IsRunning() const { return _bIsRunning; }
+
 private:
     std::chrono::time_point<std::chrono::high_resolution_clock> _startTimePoint;
     long long _duration = 0;
+    bool _bIsRunning = false;
 };
